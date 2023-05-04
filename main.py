@@ -90,6 +90,8 @@ class retail_store_inventory:
         self.item_name_entry=tk.Entry(self.window,relief='sunken',width=50)
         self.item_name_entry.grid(row=0,column=2,columnspan=3)
         self.DESCRIPTION = tk.Label(text="DESCRIPTION")
+        self.Label_s=tk.Label(text="HoRuS",fg="red",font=("Cambria",10,'bold'))
+        self.Label_s.grid(row=18,column=0,rowspan=5,padx=25,pady=25)
         self.DESCRIPTION.grid(row=1,columnspan=2,padx=5,pady=5)
         self.DESCRIPTION_entry=tk.Entry(self.window,relief='sunken',width=50)
         self.DESCRIPTION_entry.grid(row=1,column=2,columnspan=3)
@@ -143,7 +145,7 @@ class retail_store_inventory:
                                  item_name=check_item_name(self.LIst[i])
                                  if(self.entry_1_val==item_name):
                                      self.flag=1
-                                     self.label.config(text="cannot add this item since it already exists ",fg='green',font=('Times New Roman',17,'bold'))
+                                     self.label.config(text="cannot add this item since it already exists ",fg='green',font=('Times New Roman',15,'bold'))
                                      self.label.grid(row=7,column=5,columnspan=3,padx=15,pady=15)
                                      break
                                      
@@ -152,17 +154,17 @@ class retail_store_inventory:
                                 self.file.write("item name="+ self.entry_1_val+','+"Description="+self.entry_2_val+','+"Price/item="+self.entry_3_val+','+"Quantity="+self.entry_4_val)
                                 self.file.write("\n")
                                 self.file.close()
-                                self.label.config(text="added successfully",fg='green',font=('Times New Roman',17,'bold'))
+                                self.label.config(text="added successfully",fg='green',font=('Times New Roman',15,'bold'))
                                 self.label.grid(row=7,column=5,columnspan=3,padx=15,pady=15)
                         else:
-                            self.label.config(text="cannot write description text in quantity field or price field ",fg='red',font=('Times New Roman',17,'bold'))
+                            self.label.config(text="cannot write description text in quantity field or price field ",fg='red',font=('Times New Roman',15,'bold'))
                             self.label.grid(row=7,column=5,columnspan=3,padx=15,pady=15)
                     else:
-                        self.label.config(text="item name cannot be written multiple times in other fields",fg='red',font=('Times New Roman',17,'bold'))
+                        self.label.config(text="item name cannot be written multiple times in other fields",fg='red',font=('Times New Roman',15,'bold'))
                         self.label.grid(row=7,column=5,columnspan=3,padx=15,pady=15)
                         
             else:
-                self.label.config(text="cannot insert empty field/s",fg='red',font=('Times New Roman',17,'bold'))
+                self.label.config(text="cannot insert empty field/s",fg='red',font=('Times New Roman',15,'bold'))
                 self.label.grid(row=7,column=5,columnspan=3,padx=15,pady=15)            
         else:
             sys.exit("file doesn't exist")
@@ -208,7 +210,7 @@ class retail_store_inventory:
                                   self.entry_2_val="@#$@%"
                                   self.marker=1
                                 #   print("helo",self.entry_2_val)
-                              if((self.entry_3_val != self.entry_2_val) and (self.entry_4_val != self.entry_2_val)):
+                              if((self.entry_3_val != self.entry_2_val) or (self.entry_4_val != self.entry_2_val)):
                                     if self.marker==1:
                                         self.entry_2_val=""
                                     self.entry_vals=[self.entry_1_val,self.entry_2_val,self.entry_3_val,self.entry_4_val]
@@ -244,23 +246,23 @@ class retail_store_inventory:
                                             
                                             
                                     self.f_write.close()        
-                                    self.label.config(text="updated successfully",fg='green',font=('Times New Roman',17,'bold'))
+                                    self.label.config(text="updated successfully",fg='green',font=('Times New Roman',15,'bold'))
                                     self.label.grid(row=7,column=5,columnspan=3,padx=15,pady=15)
                               else:
-                                    self.label.config(text="cannot write description text in quantity field or price field ",fg='red',font=('Times New Roman',17,'bold'))
+                                    self.label.config(text="cannot write description text in quantity field or price field ",fg='red',font=('Times New Roman',15,'bold'))
                                     self.label.grid(row=7,column=5,columnspan=3,padx=15,pady=15)
                          else:
-                            self.label.config(text="item name cannot be written multiple times in other fields",fg='red',font=('Times New Roman',17,'bold'))
+                            self.label.config(text="item name cannot be written multiple times in other fields",fg='red',font=('Times New Roman',15,'bold'))
                             self.label.grid(row=7,column=5,columnspan=3,padx=15,pady=15)
                     else:
-                        self.label.config(text="need to type sth in at least one field in order to update the info of the that item ",fg='red',font=('Times New Roman',17,'bold'))
-                        self.label.grid(row=7,column=5,columnspan=3,padx=15,pady=15)
+                        self.label.config(text="need to type sth in at least one field in order to update the info of the that item ",fg='red',font=('Times New Roman',13,'bold'))
+                        self.label.grid(row=7,column=3,columnspan=3,padx=15,pady=15)
             
                 else:
-                    self.label.config(text="cannot update item since it doesn't exist ",fg='red',font=('Times New Roman',17,'bold'))
+                    self.label.config(text="cannot update item since it doesn't exist ",fg='red',font=('Times New Roman',15,'bold'))
                     self.label.grid(row=7,column=5,columnspan=3,padx=15,pady=15)
             else:
-                self.label.config(text="item name must be passed in order to update it ",fg='red',font=('Times New Roman',17,'bold'))
+                self.label.config(text="item name must be passed in order to update it ",fg='red',font=('Times New Roman',15,'bold'))
                 self.label.grid(row=7,column=5,columnspan=3,padx=15,pady=15)
         else:
             sys.exit("File Doesn't exist")
@@ -289,14 +291,14 @@ class retail_store_inventory:
                         else:
                             self.f_write.write(self.LIst[i])
                     self.f_write.close()
-                    self.label.config(text="deleted successfully",fg='green',font=('Times New Roman',17,'bold'))
-                    self.label.grid(row=10,column=2,columnspan=3,padx=15,pady=15)
+                    self.label_2.config(text="deleted successfully",fg='green',font=('Times New Roman',15,'bold'))
+                    self.label_2.grid(row=10,column=2,columnspan=3,padx=15,pady=15)
                 else:
-                    self.label_2.config(text="cannot delete an item that doesn't exist ",fg='red',font=('Times New Roman',17,'bold'))
+                    self.label_2.config(text="cannot delete an item that doesn't exist ",fg='red',font=('Times New Roman',15,'bold'))
                     self.label_2.grid(row=10,column=2,columnspan=3,padx=15,pady=15)            
                     
             else:
-                self.label_2.config(text="cannot delete an item without first passing its name ",fg='green',font=('Times New Roman',17,'bold'))
+                self.label_2.config(text="cannot delete an item without first passing its name ",fg='red',font=('Times New Roman',15,'bold'))
                 self.label_2.grid(row=10,column=2,columnspan=3,padx=15,pady=15)
         else:
             sys.exit("File Doesnt exist")
@@ -322,7 +324,7 @@ class retail_store_inventory:
             if self.LIst[i]=="\n":
                 continue
             else:
-                self.Lab=tk.Label(scrollable_frame,text=self.LIst[i],font=('Times New Roman',17,'bold'))
+                self.Lab=tk.Label(scrollable_frame,text=self.LIst[i],font=('Times New Roman',15,'bold'))
                 self.Lab.grid(row=self.row_num,column=0,padx=15,pady=15)
                 self.row_num+=1
         self.another_rootwindow.resizable(True, True)
