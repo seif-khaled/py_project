@@ -27,5 +27,38 @@ This project is a **Retail Store Inventory Management System** built with **Pyth
 - Pygame (for music)
 - Text File for data storage
 
-### Application Tour
+<h2 style="color:red">Application Tour</h2>
+
+### Main Menu
+
 ![Alt text](Screenshot_2024_12-14_210956.jpg)
+
+### Current Inventory Items
+![](Screenshot_2024-12-14_211017.jpg)
+
+
+
+### Add Items to inventory 
+
+![](Screenshot_2024-12-14_211628.jpg)
+
+![Screenshot 2024-12-14 213456](https://github.com/user-attachments/assets/65b214cb-fa0d-48cd-8757-9a4528dd9d88)
+![Screenshot 2024-12-14 213546](https://github.com/user-attachments/assets/f46d184c-043a-4e82-a68e-4aa520e47074)
+
+### Update Items in inventory 
+
+![image](https://github.com/user-attachments/assets/0d91fcc6-e2c6-4f94-983d-0f827527519a)
+![image](https://github.com/user-attachments/assets/82eacc89-528b-47fc-8ad3-25616cd14f49)
+
+![image](https://github.com/user-attachments/assets/9850b8e0-0ac9-40c0-9596-2d1707ff248e)
+
+
+### Remove Items from inventory 
+
+![image](https://github.com/user-attachments/assets/43e3af64-aafc-47bc-adc7-104e5350ff4b)
+![image](https://github.com/user-attachments/assets/eb395045-e52f-4893-8744-8d52c760b408)
+![image](https://github.com/user-attachments/assets/db3c0449-2a3d-4404-a35b-bf4a429d6b6e)
+
+
+
+ 
