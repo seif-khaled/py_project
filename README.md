@@ -28,4 +28,4 @@ This project is a **Retail Store Inventory Management System** built with **Pyth
 - Text File for data storage
 
 ### Application Tour
-![Alt text](Screenshot 2024-12-14 210956.jpg "Main Menu")
+![Alt text](Screenshot_2024_12-14_210956.jpg)
